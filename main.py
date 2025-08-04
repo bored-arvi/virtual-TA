@@ -4,6 +4,7 @@ import sqlite3
 import base64
 import requests
 import numpy as np
+import os
 import json
 from typing import List, Optional
 from fastapi.middleware.cors import CORSMiddleware
@@ -17,12 +18,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+API_KEY=os.getenv("API_KEY")
 
 DB_PATH = r"C:\\Users\\aravi\\Downloads\\tds-project1\\tds_docs.db"
 EMBEDDING_URL = "https://aipipe.org/openai/v1/embeddings"
 COMPLETION_ENDPOINT = "https://aipipe.org/openai/v1/chat/completions"
 MODEL = "text-embedding-3-small"
-AIPIPE_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFyYXZpbnRoMzAwN2tAZ21haWwuY29tIn0.l8--n57gwkqL3SAcWR8oQFjODfR_TUwHd8_cM8KkqDg"  # Replace with your real key
+AIPIPE_API_KEY = API_KEY  # Replace with your real key
 HEADERS = {"Authorization": f"Bearer {AIPIPE_API_KEY}", "Content-Type": "application/json"}
 
 class QueryRequest(BaseModel):

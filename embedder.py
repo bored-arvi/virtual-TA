@@ -5,7 +5,7 @@ import sqlite3
 import numpy as np
 from pathlib import Path
 from tqdm import tqdm
-
+API_KEY=os.getenv("API_KEY")
 # Constants
 AIPIPE_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFyYXZpbnRoMzAwN2tAZ21haWwuY29tIn0.l8--n57gwkqL3SAcWR8oQFjODfR_TUwHd8_cM8KkqDg"
 EMBEDDING_URL = "https://aipipe.org/openai/v1/embeddings"
